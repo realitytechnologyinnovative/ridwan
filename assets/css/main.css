@@ -1627,11 +1627,3 @@ section,
 .starter-section {
   /* Add your styles here */
 }
-
-
-
-@media (max-width: 576px) {
-  .profile-img {
-    max-width: 100% !important;
-  }
-}
