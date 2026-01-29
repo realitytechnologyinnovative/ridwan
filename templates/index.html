@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,14 +21,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
 
  
 </head>
@@ -48,8 +49,8 @@
           <li><a href="#hero" class="active">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#resume">Resume</a></li>
-          <li><a href="#services">Skills</a></li>
-          <li><a href="#portfolio">Research Papers</a></li>
+          <li><a href="#services">Consulting Services</a></li>
+          <li><a href="#portfolio">Articles</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -63,7 +64,7 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <img src="assets/hero1.png" alt="" data-aos="fade-in">
+      <img src="{% static 'hero1.png' %}" alt="" data-aos="fade-in">
 
       <div class="container d-flex flex-column align-items-center justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
         <h2>I am Ridwan Jaafar</h2>
@@ -81,7 +82,7 @@
           <div class="col-md-6">
             <div class="row justify-content-center justify-content-lg-between gy-4">
               <div class="col-lg-6">
-                <img src="assets/profile.jpg" class="img-fluid profile-img" alt="" style="max-width: 175%; height: auto;">
+                <img src="{% static 'profile.jpg' %}" class="img-fluid profile-img" alt="" style="max-width: 175%; height: auto;">
               </div>
               
             </div>
@@ -92,20 +93,7 @@
           <div class="col-md-6">
             <div class="about-me">
               <h4>About me</h4>
-              <p>
-                I'm an applied ecosystem ecologist passionate about bridging science and practice to tackle some of our world's biggest environmental challenges. 
-                Currently, I lead strategy for a community-run conservation initiative in Nigeria, where I spearhead a sustainable agribusiness enterprise 
-                that empowers local youth and women through job creation, economic and financial inclusion, and forest restoration.
-              </p>
-              <p>
-                Alongside my applied work, I am completing a PhD at Vrije Universiteit Brussel, where I study how large herbivores 🦓🦬🦒🦏🐘 shape 
-                ecosystems stability and resilience. My goal is to provide actionable insights that inform environmental policy and climate resilience strategies.
-              </p>
-              <p>
-                My vision is to connect ecological science with development outcomes, from policy reform and nature recovery to inclusive growth and 
-                the Sustainable Development Goals. I'm always open to collaborations, partnerships, and opportunities in ecological research, 
-                conservation, environmental consulting, and sustainable development.
-              </p>
+              <p>{{ about_text|linebreaksbr }}</p>
             </div>
           </div>
         </div>
@@ -121,7 +109,7 @@
       <div class="container section-title" data-aos="fade-up">
         <h2>Resume</h2>
         <p>
-          <a href="https://drive.google.com/file/d/1CZ3dgW4PeTDTCc9me2sO2iOJQMM8C44J/view?usp=sharing" class="btn btn-primary" download target="_blank">
+          <a href="{{ resume_url }}" class="btn btn-primary" download target="_blank">
             Open CV (PDF)
           </a>
         </p>
@@ -244,8 +232,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-        <p>Specialized expertise in ecosystem ecology, conservation biology, and environmental research</p>
+        <h2>Consulting Services</h2>
+        <p>Professional environmental consulting: impact assessment, conservation planning, compliance, monitoring, climate risk, and ESG strategy</p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -255,40 +243,40 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item  position-relative">
               <div class="icon">
-                <i class="bi bi-tree"></i>
+                <i class="bi bi-clipboard-data"></i>
               </div>
-              <h3>Ecosystem Ecology</h3>
-              <p>Comprehensive ecosystem analysis, ecological modeling, and research on how large herbivores shape ecosystem stability and resilience for environmental policy.</p>
+              <h3>Environmental Impact Assessment (EIA)</h3>
+              <p>Full-cycle EIA and ESIA reporting, baseline studies, scoping, mitigation hierarchies, and stakeholder engagement aligned with IFC/World Bank standards.</p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item position-relative">
               <div class="icon">
-                <i class="bi bi-shield-check"></i>
+                <i class="bi bi-tree"></i>
               </div>
-              <h3>Conservation Biology</h3>
-              <p>Forest restoration, biodiversity conservation, and community-centered conservation initiatives that integrate ecological restoration with sustainable livelihoods.</p>
+              <h3>Conservation & Restoration Planning</h3>
+              <p>Design of protected areas, forest restoration roadmaps, NbS project design, offset strategies, and community-centered conservation programs.</p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="service-item position-relative">
               <div class="icon">
-                <i class="bi bi-graph-up"></i>
+                <i class="bi bi-shield-check"></i>
               </div>
-              <h3>Data Analysis & R Programming</h3>
-              <p>Advanced statistical analysis, ecological modeling, and scientific data management using R programming for environmental research and conservation projects.</p>
+              <h3>Regulatory Compliance & Permitting</h3>
+              <p>Environmental permits and licenses, compliance audits, due diligence, and policy alignment with national and international regulations.</p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
             <div class="service-item position-relative">
               <div class="icon">
-                <i class="bi bi-people"></i>
+                <i class="bi bi-graph-up"></i>
               </div>
-              <h3>Community Development</h3>
-              <p>Community-centered conservation initiatives, stakeholder engagement, and sustainable livelihood programs that empower local communities through conservation.</p>
+              <h3>Biodiversity Surveys & Monitoring</h3>
+              <p>Species and habitat surveys, ecological monitoring, impact tracking, and data workflows for adaptive management and reporting.</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -297,18 +285,18 @@
               <div class="icon">
                 <i class="bi bi-globe"></i>
               </div>
-              <h3>Sustainable Development</h3>
-              <p>Integration of ecological science with development outcomes, policy reform, nature recovery, and Sustainable Development Goals (SDGs) implementation.</p>
+              <h3>Climate Risk & Resilience</h3>
+              <p>Climate risk screening, resilience planning, vulnerability assessments, and integration of adaptation pathways into projects and policy.</p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
             <div class="service-item position-relative">
               <div class="icon">
-                <i class="bi bi-clipboard-data"></i>
+                <i class="bi bi-people"></i>
               </div>
-              <h3>Environmental Consulting</h3>
-              <p>Environmental impact assessment, ecological restoration planning, and scientific consulting for conservation and environmental policy development.</p>
+              <h3>ESG & Sustainability Strategy</h3>
+              <p>ESG materiality, KPIs and disclosure, sustainability roadmaps, supply-chain engagement, and impact reporting aligned to SDGs.</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -321,39 +309,24 @@
     <!-- Stats Section -->
     <section id="stats" class="stats section accent-background">
 
-      <img src="assets/img/stats-bg.jpg" alt="" data-aos="fade-in">
+      <img src="{% static 'img/stats-bg.jpg' %}" alt="" data-aos="fade-in">
 
       <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row gy-4">
+        <div class="row gy-4 justify-content-center">
 
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="0" class="purecounter">4</span>
-              <p>Countries</p>
+          {% for item in stats %}
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item text-center w-100 h-100">
+                <span data-purecounter-start="0" data-purecounter-end="{{ item.value }}" data-purecounter-duration="2" class="purecounter">0</span>
+                <p>{{ item.label }}</p>
+              </div>
             </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="0" class="purecounter">8</span>
-              <p>Research Papers</p>
+          {% empty %}
+            <div class="col-12 text-center text-muted">
+              <p>No statistics yet. Add items in admin.</p>
             </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="0" class="purecounter">6</span>
-              <p>Years Experience</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="0" class="purecounter">3</span>
-              <p>Scholarships</p>
-            </div>
-          </div><!-- End Stats Item -->
+          {% endfor %}
 
         </div>
 
@@ -366,7 +339,7 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Research Papers</h2>
+        <h2>{{ articles_section_title }}</h2>
         <p>Published research and scientific contributions in ecosystem ecology and conservation biology</p>
       </div><!-- End Section Title -->
 
@@ -374,123 +347,43 @@
 
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+          <ul class="portfolio-filters isotope-filters justify-content-center" data-aos="fade-up" data-aos-delay="100">
             <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-ecology">Ecology</li>
-            <li data-filter=".filter-conservation">Conservation</li>
-            <li data-filter=".filter-research">Research</li>
-            <li data-filter=".filter-publications">Publications</li>
+            {% for cat in categories %}
+              <li data-filter=".filter-{{ cat.slug }}">
+                {% if cat.link_url %}<a href="{{ cat.link_url }}" target="_blank">{% endif %}
+                {{ cat.name }}
+                {% if cat.link_url %}</a>{% endif %}
+              </li>
+            {% endfor %}
           </ul><!-- End Portfolio Filters -->
 
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+          <div class="row gy-4 isotope-container justify-content-center" data-aos="fade-up" data-aos-delay="200">
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ecology">
-              <img src="assets/image.webp" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Large Herbivores & Ecosystem Stability</h4>
-                <p>PhD Research on how large herbivores shape ecosystem resilience</p>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            {% if articles %}
+              {% for a in articles %}
+                {% static 'image.webp' as default_image %}
+                <div class="col-lg-4 col-md-6 portfolio-item isotope-item {% if a.category %}filter-{{ a.category.slug }}{% else %}filter-uncategorized{% endif %}">
+                  <img src="{{ a.image_url|default:default_image }}" class="img-fluid mx-auto d-block" alt="">
+                  <div class="portfolio-info text-center">
+                    <h4>{{ a.title }}</h4>
+                    <p>{{ a.description }}</p>
+                    {% if a.link_url %}
+                      <a href="{{ a.link_url }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endfor %}
+            {% else %}
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-uncategorized">
+                <img src="{% static 'image.webp' %}" class="img-fluid mx-auto d-block" alt="">
+                <div class="portfolio-info text-center">
+                  <h4>Large Herbivores & Ecosystem Stability</h4>
+                  <p>PhD Research on how large herbivores shape ecosystem resilience</p>
+                  <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
               </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-conservation">
-              <img src="assets/image.webp" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Forest Restoration in Nigeria</h4>
-                <p>Community-centered conservation and forest restoration research</p>
-                <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-research">
-              <img src="assets/image.webp" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Environmental Stoichiometry</h4>
-                <p>MSc thesis on environmental stoichiometry in African savannas</p>
-                <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-publications">
-              <img src="assets/image.webp" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Seed Dispersal Research</h4>
-                <p>Animal-mediated seed dispersal in Afromontane landscapes</p>
-                <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ecology">
-              <img src="assets/image.webp" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Urban Pond Ecology</h4>
-                <p>Research on terrestrial pollen subsidies and water quality in Leipzig Park</p>
-                <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-conservation">
-              <img src="assets/image.webp" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Community Conservation</h4>
-                <p>Nature-based Solutions enterprise and sustainable livelihood programs</p>
-                <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-research">
-              <img src="assets/image.webp" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Biogeochemistry Research</h4>
-                <p>Advanced analytical techniques using imaging flow cytometry and elemental analysis</p>
-                <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-publications">
-              <img src="assets/image.webp" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Ecosystem Resilience</h4>
-                <p>Research on climate resilience strategies and environmental policy development</p>
-                <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ecology">
-              <img src="assets/image.webp" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Savanna Ecology</h4>
-                <p>Collaborative research across 10 African countries on savanna ecosystem dynamics</p>
-                <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-conservation">
-              <img src="assets/image.webp" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Honey Processing Enterprise</h4>
-                <p>Community-centered agribusiness linking forest conservation with sustainable livelihoods</p>
-                <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-research">
-              <img src="assets/image.webp" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Field Ecology Methods</h4>
-                <p>Advanced field research techniques and ecological monitoring protocols</p>
-                <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-publications">
-              <img src="assets/image.webp" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Scientific Publications</h4>
-                <p>Peer-reviewed research contributions in international conservation journals</p>
-                <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
+            {% endif %}
 
           </div><!-- End Portfolio Container -->
 
@@ -581,21 +474,25 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'vendor/typed.js/typed.umd.js' %}"></script>
+  <script src="{% static 'vendor/waypoints/noframework.waypoints.js' %}"></script>
+  <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="{% static 'js/main.js' %}"></script>
 
 </body>
 
 
+
 </html>
+
+
+
