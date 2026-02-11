@@ -109,17 +109,13 @@
       <div class="container section-title" data-aos="fade-up">
         <h2>Resume</h2>
         <p>
-<<<<<<< HEAD:templates/index.html
           <a href="{{ resume_url }}" class="btn btn-primary" download target="_blank">
-=======
-          <a href="https://drive.google.com/file/d/1M6eu9FFW9qZVee1FOMNQESQ2vD73DYFO/view?usp=drive_link" class="btn btn-primary" download target="_blank">
->>>>>>> 9fc83eff0a7b691666c38a8d3cbe3094c5cc3d94:index.html
-            Open CV (PDF)
-          </a>
+          Open CV (pdf)</a>
         </p>
       </div>  
       <!-- End Section Title -->
 
+      {% comment %}
       <div class="container">
 
         <div class="row">
@@ -228,7 +224,7 @@
         </div>
 
       </div>
-
+      {% endcomment %}
     </section><!-- /Resume Section -->
 
     <!-- Services Section -->
@@ -244,6 +240,7 @@
 
         <div class="row gy-4">
 
+        {% if not consulting_services %}
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item  position-relative">
               <div class="icon">
@@ -303,7 +300,19 @@
               <p>ESG materiality, KPIs and disclosure, sustainability roadmaps, supply-chain engagement, and impact reporting aligned to SDGs.</p>
             </div>
           </div><!-- End Service Item -->
-
+        {% else %}
+          {% for service in consulting_services %}
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="{{ service.icon }}"></i>
+                </div>
+                <h3>{{ service.title }}</h3>
+                <p>{{ service.description }}</p>
+              </div>
+            </div><!-- End Service Item -->
+          {% endfor %}
+        {% endif %}
         </div>
 
       </div>
@@ -439,7 +448,7 @@
                 <i class="bi bi-envelope flex-shrink-0"></i>
                 <div>
                   <h3>Get In Touch</h3>
-                  <p>me@rifwanjaafar.com</p>
+                  <p>me@ridwanjaafar.com</p>
                 </div>
               </div>
             </div><!-- End Info Item -->
@@ -495,12 +504,7 @@
 </body>
 
 
-<<<<<<< HEAD:templates/index.html
 
 </html>
 
 
-
-=======
-</html>
->>>>>>> 9fc83eff0a7b691666c38a8d3cbe3094c5cc3d94:index.html

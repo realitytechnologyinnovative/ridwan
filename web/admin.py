@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django import forms
-from .models import SiteContent, Article, StatItem, AboutMeContent, ArticleCategory
+from .models import SiteContent, Article, StatItem, AboutMeContent, ArticleCategory, ConsultingService
 
 
 SUGGESTED_STAT_LABELS = [
@@ -118,3 +118,6 @@ class StatItemAdmin(admin.ModelAdmin):
 		extra_context = extra_context or {}
 		extra_context['stat_label_suggestions'] = SUGGESTED_STAT_LABELS
 		return super().changelist_view(request, extra_context=extra_context)
+
+
+admin.site.register(ConsultingService)

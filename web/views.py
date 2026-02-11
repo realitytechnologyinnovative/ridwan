@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.utils.safestring import mark_safe
 from django.utils.html import linebreaks
-from .models import SiteContent, Article, StatItem, AboutMeContent, ArticleCategory
+from .models import SiteContent, Article, StatItem, AboutMeContent, ArticleCategory, ConsultingService
 
 
 DEFAULT_ABOUT_TEXT = (
@@ -49,6 +49,7 @@ def home(request):
 	content = SiteContent.objects.first()
 	articles = list(Article.objects.select_related('category').all())
 	categories = list(ArticleCategory.objects.all())
+	consulting_services = ConsultingService.objects.all()
 	stats = list(StatItem.objects.all())
 	context = {
 		'about_text': about_text,
@@ -57,6 +58,7 @@ def home(request):
 		'articles': articles,
 		'categories': categories,
 		'stats': stats,
+		'consulting_services': consulting_services,
 	}
 	return render(request, 'index.html', context)
 

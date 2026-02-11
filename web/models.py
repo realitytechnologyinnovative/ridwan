@@ -76,3 +76,12 @@ class StatItem(models.Model):
 
 	def __str__(self) -> str:
 		return f"{self.label}: {self.value}"
+
+
+class ConsultingService(models.Model):
+	icon = models.CharField(max_length=50)
+	title = models.CharField(max_length=100)
+	description = models.TextField()
+
+	def __str__(self):
+		return self.title
